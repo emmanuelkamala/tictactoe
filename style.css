@@ -10,11 +10,12 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+
 }
 
 .container h2 {
     height: 120px;
-    font-size: 55px;
+    font-size: 3em;
     color: white;
 }
 
@@ -50,17 +51,28 @@ body {
     cursor: pointer;
 }
 
+.x, .o {
+    cursor: default;
+}
+
 .x::after {
    content: 'x';
    font-size: 100px;
-   color: whitesmoke;
 }
 
 .o::after {
    content: 'o';
    font-size: 100px;
+   color: whitesmoke;
 }
 
+span {
+    color: whitesmoke;
+}
+
+.won {
+    color: green;
+}
 
 
 
