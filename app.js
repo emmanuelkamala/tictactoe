@@ -2,20 +2,27 @@
 const statusDiv = document.querySelector('.status');
 const resetDiv = document.querySelector('.reset');
 const cellDivs = document.querySelectorAll('.game-cell');
+let player1 = 'player 1';
+let player2 = 'player 2';
+const startBtn = document.getElementById('start');
+const newGame = document.getElementById('game');
+const gamePlayers = document.getElementById('players');
+const clearBtn = document.getElementById('clear');
 
 // Game variables
 
 let gameStart = true;
 let currentPlayer = true;
 
+
 // functions
 
-const handleWin = (letter) => {
+const handleWin = (player) => {
     gameStart = false;
-    if (letter === 'x') {
-        statusDiv.innerHTML = `${letter} has won`;
+    if (player === 'x') {
+        statusDiv.innerHTML = `${player1} has won`;
     } else {
-        statusDiv.innerHTML = `<span>${letter} has won</span>`;
+        statusDiv.innerHTML = `<span>${player2} has won</span>`;
     }
 }
 
@@ -85,28 +92,35 @@ const checkGameStatus = () => {
     } else {
         currentPlayer = !currentPlayer;
         if (currentPlayer){
-            statusDiv.innerHTML = 'x is next';
+            statusDiv.innerHTML = `${player1} is next`;
         } else {
-            statusDiv.innerHTML = '<span>o is next</span>';
+            statusDiv.innerHTML = `<span>${player2} is next</span>`;
         }
     }
 };
 
-
+const clearItems = () => {
+    player1 = document.getElementById('first-player');
+    //console.log('input', document.getElementById('first-player').value);
+    player2 = document.getElementById('second-player');
+    player1.value = '';
+    player2.value = '';
+}
 
 
 // Event handlers
 
 const handleReset = () => {
     currentPlayer = true;
-    statusDiv.innerHTML = 'x is next';
     for (const cellDiv of cellDivs){
         cellDiv.classList.remove('x');
         cellDiv.classList.remove('o');
         cellDiv.classList.remove('won');
     }
 
+    handleStartButton();
     gameStart = true;
+    clearItems();
 };
 
 const handleCellClick = (e) => {
@@ -126,6 +140,16 @@ const handleCellClick = (e) => {
 };
 
 
+const handleStartButton = () => {
+    player1 = document.getElementById('first-player').value.trim() || player1;
+    //console.log('input', document.getElementById('first-player').value);
+    player2 = document.getElementById('second-player').value.trim() || player2;
+    
+    newGame.classList.toggle('visible');
+    gamePlayers.classList.toggle('invisible');
+ }
+
+
 // Event listeners
 
 resetDiv.addEventListener('click', handleReset);
@@ -133,4 +157,6 @@ resetDiv.addEventListener('click', handleReset);
 for (const cellDiv of cellDivs){
     cellDiv.addEventListener('click', handleCellClick);
 }
+
+startBtn.addEventListener('click', handleStartButton);
 
