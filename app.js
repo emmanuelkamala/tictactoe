@@ -101,7 +101,6 @@ const checkGameStatus = () => {
 
 const clearItems = () => {
     player1 = document.getElementById('first-player');
-    //console.log('input', document.getElementById('first-player').value);
     player2 = document.getElementById('second-player');
     player1.value = '';
     player2.value = '';
@@ -142,7 +141,6 @@ const handleCellClick = (e) => {
 
 const handleStartButton = () => {
     player1 = document.getElementById('first-player').value.trim() || player1;
-    //console.log('input', document.getElementById('first-player').value);
     player2 = document.getElementById('second-player').value.trim() || player2;
     
     newGame.classList.toggle('visible');
