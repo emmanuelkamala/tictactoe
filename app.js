@@ -2,18 +2,15 @@
 const statusDiv = document.querySelector('.status');
 const resetDiv = document.querySelector('.reset');
 const cellDivs = document.querySelectorAll('.game-cell');
-let player1 = 'player 1';
-let player2 = 'player 2';
 const startBtn = document.getElementById('start');
 const newGame = document.getElementById('game');
-const gamePlayers = document.getElementById('players');
-const clearBtn = document.getElementById('clear');
+let player1 = 'player 1';
+let player2 = 'player 2';
 
 // Game variables
 
 let gameStart = true;
 let currentPlayer = true;
-
 
 // functions
 
@@ -104,6 +101,7 @@ const clearItems = () => {
     player2 = document.getElementById('second-player');
     player1.value = '';
     player2.value = '';
+    statusDiv.innerHTML = '';
 }
 
 
@@ -140,9 +138,9 @@ const handleCellClick = (e) => {
 
 
 const handleStartButton = () => {
+    const gamePlayers = document.getElementById('players');
     player1 = document.getElementById('first-player').value.trim() || player1;
     player2 = document.getElementById('second-player').value.trim() || player2;
-    
     newGame.classList.toggle('visible');
     gamePlayers.classList.toggle('invisible');
  }

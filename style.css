@@ -2,7 +2,8 @@
     box-sizing: border-box;
     margin: 0; 
     padding: 0; 
-    font-family: 'Rock Salt', cursive;
+    /*font-family: 'Rock Salt', cursive;*/
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
@@ -49,6 +50,42 @@ body {
     align-items: center;
     background: cornflowerblue;
     cursor: pointer;
+}
+
+.label {
+    font-size: 25pt;
+    color: white;
+}
+
+#start, .reset {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.status {
+    border: 1px solid whitesmoke;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+::placeholder {
+    font-size: 14pt;
 }
 
 .x, .o {
