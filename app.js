@@ -137,8 +137,12 @@ const handleCellClick = (e) => {
 const handleStartButton = () => {
     const gamePlayers = document.getElementById('players');
     const newGame = document.getElementById('game');
-    player1 = document.getElementById('first-player').value.trim() || player1;
-    player2 = document.getElementById('second-player').value.trim() || player2;
+    player1 = document.getElementById('first-player').value;
+    player2 = document.getElementById('second-player').value;
+    if (player1 === '' && player2 === ''){
+        alert('Please enter names for player one and player two');
+        return;
+    }
     newGame.classList.toggle('visible');
     gamePlayers.classList.toggle('invisible');
  }
