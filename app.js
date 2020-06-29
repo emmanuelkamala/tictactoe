@@ -1,20 +1,11 @@
-// HTML elements
-const statusDiv = document.querySelector('.status');
-const resetDiv = document.querySelector('.reset');
 const cellDivs = document.querySelectorAll('.game-cell');
-const startBtn = document.getElementById('start');
-const newGame = document.getElementById('game');
-let player1 = 'player 1';
-let player2 = 'player 2';
-
-// Game variables
-
 let gameStart = true;
 let currentPlayer = true;
 
 // functions
 
 const handleWin = (player) => {
+    const statusDiv = document.querySelector('.status');
     gameStart = false;
     if (player === 'x') {
         statusDiv.innerHTML = `${player1} has won`;
@@ -33,6 +24,8 @@ const checkGameStatus = () => {
     const bottomLeft = cellDivs[6].classList[1];
     const bottomMiddle = cellDivs[7].classList[1];
     const bottomRight = cellDivs[8].classList[1];   
+    const statusDiv = document.querySelector('.status');
+    
 
     // Check winner
 
@@ -96,7 +89,11 @@ const checkGameStatus = () => {
     }
 };
 
+
+// Clearing Items
+
 const clearItems = () => {
+    const statusDiv = document.querySelector('.status');
     player1 = document.getElementById('first-player');
     player2 = document.getElementById('second-player');
     player1.value = '';
@@ -139,6 +136,7 @@ const handleCellClick = (e) => {
 
 const handleStartButton = () => {
     const gamePlayers = document.getElementById('players');
+    const newGame = document.getElementById('game');
     player1 = document.getElementById('first-player').value.trim() || player1;
     player2 = document.getElementById('second-player').value.trim() || player2;
     newGame.classList.toggle('visible');
@@ -148,11 +146,12 @@ const handleStartButton = () => {
 
 // Event listeners
 
-resetDiv.addEventListener('click', handleReset);
+
 
 for (const cellDiv of cellDivs){
     cellDiv.addEventListener('click', handleCellClick);
 }
 
-startBtn.addEventListener('click', handleStartButton);
+document.getElementById('start').addEventListener('click', handleStartButton);
+document.querySelector('.reset').addEventListener('click', handleReset);
 
