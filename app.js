@@ -73,9 +73,9 @@ const playerFactory = (name, mark) => {
       const board = boardModule;
       const gameStatus = document.querySelector('.game-status');
       if (currentPlayer.name !== '') {
-        gameStatus.textContent = `${currentPlayer.name}'s Turn`;
+        gameStatus.textContent = `It\'s ${currentPlayer.name}'s turn`;
       } else {
-        gameStatus.textContent = 'Board: ';
+        gameStatus.textContent = '';
       }
   
       board.gameBoard.addEventListener('click', (event) => {
@@ -89,9 +89,9 @@ const playerFactory = (name, mark) => {
             gameStatus.textContent = 'It\'s a draw!';
           } else if (winStatus === null) {
             turnTaken();
-            gameStatus.textContent = `${currentPlayer.name}'s Turn`;
+            gameStatus.textContent = `It\'s ${currentPlayer.name}'s turn`;
           } else {
-            gameStatus.textContent = `Winner is ${currentPlayer.name}`;
+            gameStatus.textContent = `${currentPlayer.name} has won`;
             board.reset();
             board.render();
           }
@@ -112,15 +112,15 @@ const playerFactory = (name, mark) => {
       event.preventDefault();
       if (playerOneName.value !== '' && playerTwoName.value !== '') {
         init();
-        form.classList.add('hidden');
-        document.querySelector('.place').classList.remove('hidden');
+        form.classList.add('hide');
+        document.querySelector('.place').classList.remove('hide');
       } else {
         window.location.reload();
       }
     });
   
     resetBtn.addEventListener('click', () => {
-      document.querySelector('.game-status').textContent = 'Board: ';
+      document.querySelector('.game-status').textContent = ' ';
       document.querySelector('#player1').value = '';
       document.querySelector('#player2').value = '';
       window.location.reload();
