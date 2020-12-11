@@ -1,6 +1,6 @@
 # Project: Tic Tac Toe
 
-> It`s a Tic Tac Toe game, where two players choose a mark and the fill in their respective mark on the 3 by 3 board, a player having three consecutive mark wins the game. If neither player achieves that, then it becomes a draw. This is a simple game with no AI functionality.
+It`s a Tic Tac Toe game, where two players choose a mark and the fill in their respective mark on the 3 by 3 board, a player having three consecutive mark wins the game. If neither player achieves that, then it becomes a draw. This is a simple game with no AI functionality.
 
 ![screenshot](./images/ttt1.png)
 ![screenshot](./images/ttt2.png)
