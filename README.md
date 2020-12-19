@@ -55,6 +55,3 @@ Give a ⭐️ if you like this project!
 - The odin project
 - Microverse tips
 
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
