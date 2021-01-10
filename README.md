@@ -53,5 +53,5 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - The odin project
-- Microverse tips
+- Microverse
 
